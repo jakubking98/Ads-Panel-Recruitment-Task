@@ -1,6 +1,18 @@
-# React + TypeScript + Vite
+# Recruitment Task - Ads Panel 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+
+Ads Panel is an application designed for managing advertisements. Its primary functions include adding, editing, and deleting ads through a user-friendly form. Advertisements are stored as objects in local storage. On the homepage, quotes along with their authors are fetched via an API and dynamically rendered. The application uses React Router DOM to secure access to the admin panel, ensuring that only authorized users with the correct password can access it.
+
+## Demo
+
+
+
+
+
+
+
+
 
 Currently, two official plugins are available:
 
