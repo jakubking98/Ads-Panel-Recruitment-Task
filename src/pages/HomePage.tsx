@@ -16,6 +16,7 @@ import { useStyles } from "../styles/customStyles";
 
 export default function HomePage() {
   const [quote, setQuote] = useState<string>("");
+  const [autor, setAutor] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
   const theme = useTheme();
   const smallDivice = useMediaQuery(theme.breakpoints.down("sm"));
@@ -23,7 +24,7 @@ export default function HomePage() {
   const classes = useStyles();
 
   useEffect(() => {
-    QuoteDisplay(setQuote, setLoading);
+    QuoteDisplay(setQuote, setAutor, setLoading);
   }, []);
 
   return (
@@ -52,15 +53,27 @@ export default function HomePage() {
           {loading ? (
             <CircularProgress className={classes.circularProgressStyle} />
           ) : (
-            <Typography
-              variant="h6"
-              className={classes.typographyHome}
-              style={{
-                fontSize: isMobile ? "18px" : "24px",
-              }}
-            >
-              "{quote}"
-            </Typography>
+            <>
+              <Typography
+                variant="h6"
+                className={classes.typographyHome}
+                style={{
+                  fontSize: isMobile ? "18px" : "24px",
+                  marginBottom: "20px",
+                }}
+              >
+                "{quote}"
+              </Typography>
+              <Typography
+                variant="h6"
+                className={classes.typographyHome}
+                style={{
+                  fontSize: isMobile ? "18px" : "24px",
+                }}
+              >
+                "{autor}"
+              </Typography>
+            </>
           )}
           <Button
             variant="contained"
